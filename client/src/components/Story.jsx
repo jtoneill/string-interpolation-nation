@@ -39,7 +39,7 @@ function Story({ storyInfo }) {
           finalStory === '' ?
           fragments.map((piece, index) => {
             if (index % 2 === 0) {
-              return (<p key={uuidv4()}>{piece}</p>);
+              // return (<p key={uuidv4()}>{piece}</p>);
             } else {
               return (
                 <input
@@ -49,13 +49,15 @@ function Story({ storyInfo }) {
                   onChange={(e) => {
                     document.querySelectorAll(`.${piece}`).forEach((el) => el.value = e.target.value);
                   }}
-                  style={{width: (piece.length) * (piece.length < 10 ? 12 : 7)}}
+                  style={{width: (piece.length) * (piece.length < 7 ? 19 : 13)}}
                 />
               )
             }
           }) : <p className="finalP">{finalStory}</p>
         }
+        <p className="hint">{finalStory === '' ? 'Use the blue hints above to fill out each box, then press submit!' : 'Press reset to start over!'}</p>
         <input
+          className="submitBtn"
           type="submit"
           onClick={(e) => {
             e.preventDefault();

@@ -12,6 +12,9 @@ function List({ setStoryId }) {
         console.log('list res', res);
         setList(res);
       })
+      .catch((err) => {
+        console.log('List get err', err.message);
+      });
   }, []);
 
   return (
@@ -28,6 +31,7 @@ function List({ setStoryId }) {
         />
       ))
      }
+     <button className="addStoryBtn">Add Story</button>
     </div>
   );
 }
