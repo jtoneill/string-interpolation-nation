@@ -45,7 +45,10 @@ function Story({ storyInfo }) {
                 <input
                   key={uuidv4()}
                   placeholder={piece}
-                  className={'storyInput ' + piece.indexOf('name') !== -1 ? piece : ''}
+                  className={'storyInput ' + (piece.indexOf('name') !== -1 ? piece : '')}
+                  onChange={(e) => {
+                    document.querySelectorAll(`.${piece}`).forEach((el) => el.value = e.target.value);
+                  }}
                   style={{width: (piece.length) * (piece.length < 10 ? 12 : 7)}}
                 />
               )

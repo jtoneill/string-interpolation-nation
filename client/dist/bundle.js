@@ -237,7 +237,12 @@ function Story(_ref) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
         key: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
         placeholder: piece,
-        className: 'storyInput ' + piece.indexOf('name') !== -1 ? piece : '',
+        className: 'storyInput ' + (piece.indexOf('name') !== -1 ? piece : ''),
+        onChange: function onChange(e) {
+          document.querySelectorAll(".".concat(piece)).forEach(function (el) {
+            return el.value = e.target.value;
+          });
+        },
         style: {
           width: piece.length * (piece.length < 10 ? 12 : 7)
         }

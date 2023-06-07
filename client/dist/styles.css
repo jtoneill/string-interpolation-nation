@@ -1,6 +1,10 @@
+body{
+  background-color: rgb(0, 78, 152);
+}
+
 header {
   width: 100%;
-  background-color: grey;
+  background-color: rgb(58, 110, 165);
   margin-bottom: 10px;
   height: 50px;
 }
@@ -20,7 +24,6 @@ footer {
 #Page{
   display: flex;
   flex-direction: row;
-  background-color: aqua;
 }
 
 #List {
@@ -28,14 +31,14 @@ footer {
   flex-direction: column;
   width: 220px;
   padding: 10px;
-  background-color: aquamarine;
+  background-color: rgb(192, 192, 192);
 }
 
 .listItem{
   display: flex;
   flex-direction: column;
   margin: 10px;
-  background-color: bisque;
+  background-color: rgb(235, 235, 235);
 }
 
 .listItemText{
@@ -64,7 +67,8 @@ footer {
   width: 100%;
   height: 900px;
   margin-left: 10px;
-  background-color: brown;
+
+
   font-size: 20px;
 }
 
@@ -72,9 +76,28 @@ footer {
   display: flex;
   flex-direction: row;
   height: 100px;
-  width: 100%;
-  margin-bottom: 10px;
-  background-color: aquamarine;
+  margin: 10px;
+  background-color: rgb(235, 235, 235);
+  border: 4px solid rgb(255, 103, 0);
+  border-radius: 10px;
+}
+
+.leftDetail{
+  width: 50%;
+  padding: 10px;
+}
+
+h2{
+  margin: 4px;
+}
+
+h4{
+  margin: 4px;
+}
+
+.rightDetail{
+  width: 50%;
+  padding: 10px;
 }
 
 #Story{
@@ -82,8 +105,14 @@ footer {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  align-content: flex-start;
   overflow: hidden;
   margin: 10px;
+  padding: 10px;
+  height: 100%;
+  border: 4px solid rgb(255, 103, 0);
+  border-radius: 10px;
+  background-color: rgb(235, 235, 235);
 }
 
 #inputForm{
@@ -92,8 +121,14 @@ footer {
 }
 
 .storyInput{
-
+  border: none;
+  border-radius: 10px;
   height: 18px;
+  background-color: rgb(192, 192, 192);
+}
+
+::placeholder{
+  color: rgb(0, 78, 152)
 }
 
 p{
@@ -102,6 +137,7 @@ p{
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: 5px;
+  color: rgb(235, 235, 235);
 }
 
 .finalP{
@@ -110,4 +146,5 @@ p{
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: 5px;
+  color: black;
 }
