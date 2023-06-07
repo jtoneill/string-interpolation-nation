@@ -58,6 +58,7 @@ footer {
   background-color: rgb(235, 235, 235);
   border: 4px solid rgb(255, 103, 0);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .listItemText{
@@ -86,10 +87,11 @@ footer {
   left: 50px;
   border: none;
   font-size: 25px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(0, 78, 152);
   border-radius: 5px;
   padding: 6px;
   width: 140px;
+  color: rgb(235, 235, 235);
 }
 
 #StoryContainer{
@@ -176,25 +178,30 @@ h4{
 }
 
 ::placeholder{
-  color: rgb(0, 78, 152);
+  color: rgba(0, 78, 152, 0.7);
 }
 
 .submitBtn{
   border: none;
   font-size: 25px;
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(0, 78, 152);
   border-radius: 5px;
   padding: 6px;
-}
-
-p{
-  height: 18px;
-  margin-top: 0;
-  margin-bottom: 30px;
-  margin-left: 5px;
-  margin-right: 5px;
   color: rgb(235, 235, 235);
 }
+
+.btn {
+  cursor: pointer;
+}
+
+/* p{
+  height: 18px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: black;
+} */
 
 .finalP{
   height: fit-content;
@@ -209,10 +216,38 @@ p{
 .hint{
   width: 100%;
   height: 24px;
-  background-color: rgb(192, 192, 192);
-  color: black;
+  background-color: rgb(0, 78, 152);
+  color: rgb(235, 235, 235);
   margin-top: 17px;
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
+}
+
+#StoryModal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(235, 235, 235);
+  z-index: 10;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addStoryForm{
+  display: flex;
+  flex-direction: column;
+}
+
+#overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
 }

@@ -26,11 +26,23 @@ module.exports = {
   },
 
   putVote: async (req, res) => {
+    console.log('vote req.body', req.body);
     try {
-      await model.stores.vote();
+      await model.stories.vote(req.body);
       res.sendStatus(204);
     } catch (err) {
       console.log('controller putVote err', err.message);
+      res.send(err);
+    }
+  },
+
+  postStory: async (req, res) => {
+    console.log('post req.body', req.body)
+    try {
+      await model.stories.postStory(req.body);
+      res.sendStatus(204);
+    } catch (err) {
+      console.log('controller postStory err', err.message);
       res.send(err);
     }
   }

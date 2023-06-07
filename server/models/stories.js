@@ -18,10 +18,12 @@ module.exports = {
       stories
     WHERE
       flagged = false
+    ORDER BY
+      id ASC
   `),
 
 
-  vote: (id, vote) => db.query(`
+  vote: ({ id, vote }) => db.query(`
     UPDATE
       stories
     SET
@@ -29,4 +31,17 @@ module.exports = {
     WHERE
       id = $1
   `, [id, vote]),
+
+  postStory: ({ story_name, story_body, writer_name }) => db.query(`
+    INSERT INTO stories (
+      story_name,
+      story_body,
+      writer_name,
+      score,
+      flagged
+    )
+    VALUES (
+      $1, $2, $3, 0, false
+    )
+  `, [story_name, story_body, writer_name]),
 }

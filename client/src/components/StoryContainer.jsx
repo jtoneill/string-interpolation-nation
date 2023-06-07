@@ -3,7 +3,7 @@ import parse from '../parse';
 import Story from './Story.jsx';
 import Details from './Details.jsx';
 
-function StoryContainer({ storyId }) {
+function StoryContainer({ storyId, setToggle, toggle }) {
   const [storyInfo, setStoryInfo] = useState({});
 
   useEffect(() => {
@@ -13,11 +13,11 @@ function StoryContainer({ storyId }) {
         console.log('story res', res);
         setStoryInfo(res[0]);
       })
-  }, [storyId]);
+  }, [storyId, toggle]);
 
   return (
     <div id="StoryContainer">
-      <Details storyInfo={storyInfo} />
+      <Details storyInfo={storyInfo} setToggle={setToggle} toggle={toggle} />
       <Story storyInfo={storyInfo} />
     </div>
   );

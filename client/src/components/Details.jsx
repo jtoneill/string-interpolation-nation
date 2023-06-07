@@ -1,15 +1,22 @@
 import React from 'react';
 import parse from '../parse.js';
 
-function Details({ storyInfo }) {
+function Details({ storyInfo, setToggle, toggle }) {
 
-  const handleVote = (vote) => {
+  const handleVote = async (vote) => {
     let data = {
       id: storyInfo.id,
       vote: vote,
     };
-    parse
+    await parse
       .put('/sin/vote', data)
+      .then((res) => {
+        console.log('vote received', res)
+        setToggle(!toggle);
+      })
+      .catch((err) => {
+        console.log('Details vote error');
+      })
   }
 
   return (
@@ -23,14 +30,14 @@ function Details({ storyInfo }) {
           <h4>Score: {storyInfo.score}</h4>
           <div className="vote">
             <button
-              className="voteBtn"
+              className="voteBtn btn"
               onClick={(e) => {
                 e.preventDefault();
                 handleVote(1);
               }}
             >like</button>
             <button
-              className="voteBtn"
+              className="voteBtn btn"
               onClick={(e) => {
                 e.preventDefault();
                 handleVote(-1);

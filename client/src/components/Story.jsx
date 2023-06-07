@@ -57,7 +57,7 @@ function Story({ storyInfo }) {
         }
         <p className="hint">{finalStory === '' ? 'Use the blue hints above to fill out each box, then press submit!' : 'Press reset to start over!'}</p>
         <input
-          className="submitBtn"
+          className="submitBtn btn"
           type="submit"
           onClick={(e) => {
             e.preventDefault();
