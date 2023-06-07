@@ -25,6 +25,11 @@ function Details({ storyInfo, setToggle, toggle }) {
         <h2>{storyInfo.story_name}</h2>
         <h4>By: {storyInfo.writer_name}</h4>
       </div>
+      <div className="flagMenuContainer">
+        <div>
+
+        </div>
+      </div>
       <div className="rightDetail">
         <div className="voteContainer">
           <h4>Score: {storyInfo.score}</h4>

@@ -20,19 +20,22 @@ function List({ setStoryId, toggle, setToggle }) {
   }, [toggle]);
 
   return (
-    <div id="List">
-      {
-        list.map((info) => (
-          <ListItem
-            key={info.id}
-            id={info.id}
-            storyName={info.story_name}
-            writerName={info.writer_name}
-            score={info.score}
-            setStoryId={setStoryId}
-          />
-        ))
-      }
+    <div id="ListContainer">
+      <div id="List">
+        {
+          list.map((info) => (
+            <ListItem
+              key={info.id}
+              id={info.id}
+              storyName={info.story_name}
+              writerName={info.writer_name}
+              score={info.score}
+              setStoryId={setStoryId}
+            />
+          ))
+        }
+        <div className="spacer"></div>
+      </div>
       <AddStoryModal
         toggle={toggle}
         setToggle={setToggle}

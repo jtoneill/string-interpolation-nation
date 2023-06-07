@@ -55,7 +55,7 @@ function Story({ storyInfo }) {
             }
           }) : <p className="finalP">{finalStory}</p>
         }
-        <p className="hint">{finalStory === '' ? 'Use the blue hints above to fill out each box, then press submit!' : 'Press reset to start over!'}</p>
+        <p className="hint">{finalStory === '' ? 'Instructions - Fill out the boxes above using the blue hints, then press submit!' : 'Press reset to start over!'}</p>
         <input
           className="submitBtn btn"
           type="submit"
