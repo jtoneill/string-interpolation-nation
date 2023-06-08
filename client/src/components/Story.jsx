@@ -34,35 +34,38 @@ function Story({ storyInfo }) {
   }, [storyInfo.story_body])
   return (
     <div id="Story">
-      <form id="inputForm">
+      <form
+        id="inputForm"
+        onSubmit={(e) => {
+          e.preventDefault();
+          finalStory === '' ? handleSubmit() : handleReset();
+        }}
+      >
         {
           finalStory === '' ?
-          fragments.map((piece, index) => {
-            if (index % 2 === 0) {
-              // return (<p key={uuidv4()}>{piece}</p>);
-            } else {
-              return (
-                <input
-                  key={uuidv4()}
-                  placeholder={piece}
-                  className={'storyInput ' + (piece.indexOf('name') !== -1 ? piece : '')}
-                  onChange={(e) => {
-                    document.querySelectorAll(`.${piece}`).forEach((el) => el.value = e.target.value);
-                  }}
-                  style={{width: (piece.length) * (piece.length < 7 ? 19 : 13)}}
-                />
-              )
-            }
+            fragments.map((piece, index) => {
+              if (index % 2 === 0) {
+                // return (<p key={uuidv4()}>{piece}</p>);
+              } else {
+                return (
+                  <input
+                    key={uuidv4()}
+                    placeholder={piece}
+                    className={'storyInput ' + (piece.indexOf('name') !== -1 ? piece : '')}
+                    onChange={(e) => {
+                      document.querySelectorAll(`.${piece}`).forEach((el) => el.value = e.target.value);
+                    }}
+                    style={{width: (piece.length) * (piece.length < 7 ? 19 : 13)}}
+                    required
+                  />
+                )
+              }
           }) : <p className="finalP">{finalStory}</p>
         }
         <p className="hint">{finalStory === '' ? 'Instructions - Fill out the boxes above using the blue hints, then press submit!' : 'Press reset to start over!'}</p>
         <input
           className="submitBtn btn"
           type="submit"
-          onClick={(e) => {
-            e.preventDefault();
-            finalStory === '' ? handleSubmit() : handleReset();
-          }}
           value={finalStory === '' ? 'Submit' : 'Reset'}
         />
       </form>
